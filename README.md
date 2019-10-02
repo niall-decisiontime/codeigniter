@@ -16,7 +16,7 @@ Basic docker box for little projects & tests. I base most of my docker boxes on 
 
 ## Accessing services
 
-We're exposing NGINX and MySQL their ports, so you can just go to `http://127.0.0.1/` or `http://localhost/` from your browser and connect to MySQL from your client (eg: [Sequel Pro](https://www.sequelpro.com/)) using `127.0.0.1:3306` or `localhost:3306`.
+Access app via `http://localhost:8080/` from your browser and connect to MySQL from your client (eg: [Sequel Pro](https://www.sequelpro.com/)) using `127.0.0.1:3306`.
 
 To access MySQL from within your web applications you'll need to use `mysql` as host.
 
@@ -29,5 +29,15 @@ To access MySQL from within your web applications you'll need to use `mysql` as 
 ## Installation / run
 
 ```bash
-docker-compose up
+docker-compose up --remove-orphans
+```
+## Create the sessions table
+```sql
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+        `id` varchar(128) NOT NULL,
+        `ip_address` varchar(45) NOT NULL,
+        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+        `data` blob NOT NULL,
+        KEY `ci_sessions_timestamp` (`timestamp`)
+);
 ```
