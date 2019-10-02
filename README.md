@@ -31,7 +31,7 @@ To access MySQL from within your web applications you'll need to use `mysql` as 
 ```bash
 docker-compose up --remove-orphans
 ```
-## Create the sessions tabel
+## Create the sessions table
 ```sql
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
         `id` varchar(128) NOT NULL,
