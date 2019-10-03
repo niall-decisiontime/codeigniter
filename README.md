@@ -8,6 +8,18 @@ Basic docker box for little projects & tests. I base most of my docker boxes on 
 - [Docker](https://docs.docker.com/engine/installation/) installed
 - [Docker Compose](https://docs.docker.com/compose/install/) installed
 
+## Steps
+- clone the GitHub file and place them into the "Projects" Folder on your machine (create Projects folder if necessary).
+- The file will be named "codeigniter-master".
+-  Ensure you are in the correct directory before running the command line "docker-compose up --remove-orphans".
+- To do be in the correct directory, on the command line enter:
+
+1) cd projects
+2) ls 
+3) cd codeigniter-master
+
+- Finally, enter "docker-compose up --remove-orphans" on the command line and wait for installation.
+
 ## Services
 
 - PHP-FPM 7.1
